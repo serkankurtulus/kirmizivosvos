@@ -4,7 +4,7 @@
 **Based on:** MOUSIQUA HTML Template
 **Created:** 2025-12-15
 **Last Updated:** 2025-12-15
-**Status:** Phase 1 Complete - Ready for Phase 2 (Sanity CMS Setup)
+**Status:** Phase 2 Complete - Ready for Phase 3 (Next.js Components)
 **Repository:** https://github.com/serkankurtulus/kirmizivosvos
 
 ---
@@ -312,22 +312,22 @@ kirmizi-vosvos/
 
 ## Phase 2: Sanity CMS Schema Design
 
-### Status: NOT STARTED
+### Status: COMPLETED
 
 ### Tasks
 
-- [ ] 2.1 Design and create Site Settings schema
-- [ ] 2.2 Design and create Hero Slide schema
-- [ ] 2.3 Design and create Album schema
-- [ ] 2.4 Design and create Track schema
-- [ ] 2.5 Design and create Band Member schema
-- [ ] 2.6 Design and create Tour schema
-- [ ] 2.7 Design and create Tour Date schema
-- [ ] 2.8 Design and create Gallery Image schema
-- [ ] 2.9 Design and create News Post schema
-- [ ] 2.10 Design and create Page Content schema
-- [ ] 2.11 Configure Sanity Studio
-- [ ] 2.12 Create initial content/seed data
+- [x] 2.1 Design and create Site Settings schema
+- [x] 2.2 Design and create Hero Slide schema
+- [x] 2.3 Design and create Album schema
+- [x] 2.4 Design and create Track schema
+- [x] 2.5 Design and create Band Member schema
+- [x] 2.6 Design and create Tour schema (with embedded Tour Date objects)
+- [x] 2.7 Design and create Gallery Image schema
+- [x] 2.8 Design and create News Post schema
+- [x] 2.9 Design and create Page Content schema
+- [x] 2.10 Configure Sanity Studio at /studio route
+- [ ] 2.11 Create Sanity.io project and connect (requires user action)
+- [ ] 2.12 Create initial content/seed data (after project connected)
 
 ### Schema Definitions
 
@@ -590,15 +590,41 @@ kirmizi-vosvos/
 
 ### Design Choices
 
-*(To be updated during implementation)*
+1. **Embedded Tour Dates** - Tour dates are embedded objects within Tour documents (not separate documents) for easier management
+2. **Preview Configurations** - All schemas have custom preview configurations with emojis and formatted titles
+3. **Field Groups** - PageContent schema uses field groups (about, countdown, presale, gallery) for organized editing
+4. **Validation Rules** - Required fields have validation, numbers are integers where appropriate
+5. **Ordering Support** - All list-type schemas support custom ordering via `order` field
+6. **Rich Text for News** - News posts use Portable Text with support for headings, links, and images
+7. **Image Hotspots** - All image fields support hotspot cropping for responsive images
+8. **Turkish Date Formatting** - Preview dates formatted with Turkish locale (tr-TR)
 
 ### Accomplishments
 
-*(To be updated during implementation)*
+1. **9 Schema Types Created**:
+   - `siteSettings` - Global configuration (band name, social links, contacts)
+   - `heroSlide` - Hero carousel slides with video support
+   - `album` - Albums with tracks references and streaming links
+   - `track` - Individual songs with audio upload, lyrics
+   - `bandMember` - Band member profiles
+   - `tour` - Tour info with embedded tour dates array
+   - `galleryImage` - Photo gallery items with categories
+   - `newsPost` - Blog posts with Portable Text
+   - `pageContent` - Homepage sections configuration
+
+2. **Sanity Studio Configured**:
+   - Accessible at `/studio` route
+   - Vision tool included for GROQ query testing
+   - Structure tool for content organization
+
+3. **Build Successful** - All schemas compile without TypeScript errors
 
 ### Issues Encountered
 
-*(To be updated during implementation)*
+| # | Issue | Status | Resolution |
+|---|-------|--------|------------|
+| 1 | @sanity/vision not installed | RESOLVED | Ran `npm install @sanity/vision` |
+| 2 | jsdom version mismatch warning | NOTED | Non-breaking warning, Sanity uses different version internally |
 
 ---
 
@@ -797,6 +823,23 @@ NEXT_PUBLIC_SITE_URL=https://your-domain.vercel.app
 | - | Build test passed successfully | Completed |
 | - | Initialized git, pushed to GitHub | Completed |
 | - | **PHASE 1 COMPLETE** | - |
+| - | **PHASE 2 START** | - |
+| - | Created sanity.config.ts | Completed |
+| - | Created siteSettings schema | Completed |
+| - | Created heroSlide schema | Completed |
+| - | Created album schema | Completed |
+| - | Created track schema | Completed |
+| - | Created bandMember schema | Completed |
+| - | Created tour schema (with embedded tourDate) | Completed |
+| - | Created galleryImage schema | Completed |
+| - | Created newsPost schema (with Portable Text) | Completed |
+| - | Created pageContent schema (with field groups) | Completed |
+| - | Created schema index file | Completed |
+| - | Set up Sanity Studio route at /studio | Completed |
+| - | Installed @sanity/vision (was missing) | Completed |
+| - | Build test passed | Completed |
+| - | Committed and pushed to GitHub | Completed |
+| - | **PHASE 2 COMPLETE** | - |
 
 ---
 
@@ -806,6 +849,8 @@ NEXT_PUBLIC_SITE_URL=https://your-domain.vercel.app
 |---|-------|--------|------------|
 | 1 | Disk space full (209MB remaining) | RESOLVED | Ran `npm cache clean --force`, freed 12GB |
 | 2 | CSS warning: IE hack in flexslider.css | NOTED | Legacy `*height: 0;` hack, no action needed |
+| 3 | @sanity/vision not installed | RESOLVED | Ran `npm install @sanity/vision` |
+| 4 | jsdom version mismatch warning | NOTED | Non-breaking, Sanity internal dependency |
 
 ---
 
@@ -813,13 +858,14 @@ NEXT_PUBLIC_SITE_URL=https://your-domain.vercel.app
 
 ### High Priority
 - [x] ~~Initialize Next.js project~~ (Phase 1 Complete)
-- [ ] Set up Sanity.io project (Phase 2)
-- [ ] Create CMS schemas (Phase 2)
+- [x] ~~Create CMS schemas~~ (Phase 2 Complete)
+- [ ] Create Sanity.io project on sanity.io (USER ACTION REQUIRED)
+- [ ] Convert all HTML sections to React components (Phase 3)
 
 ### Medium Priority
-- [ ] Convert all HTML sections to React components (Phase 3)
 - [ ] Implement audio player with Howler.js (Phase 3)
 - [ ] Set up image gallery with lightbox (Phase 3)
+- [ ] Connect components to Sanity data (Phase 3)
 
 ### Low Priority
 - [ ] Twitter feed integration (consider removing)
