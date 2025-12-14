@@ -1,0 +1,9 @@
+export { default as HeroSlider } from './HeroSlider';
+export { default as AboutSection } from './AboutSection';
+export { default as LatestAlbum } from './LatestAlbum';
+export { default as Discography } from './Discography';
+export { default as BandMembers } from './BandMembers';
+export { default as ToursSection } from './ToursSection';
+export { default as Gallery } from './Gallery';
+export { default as NewsSection } from './NewsSection';
+export { default as ContactSection } from './ContactSection';

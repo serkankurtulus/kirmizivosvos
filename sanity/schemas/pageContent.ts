@@ -143,12 +143,28 @@ export default defineType({
       description: 'e.g., @kirmizivosvos (shown below gallery)',
       group: 'gallery',
     }),
+
+    // Contact Section
+    defineField({
+      name: 'contactTitle',
+      title: 'Contact Section Title',
+      type: 'string',
+      group: 'contact',
+    }),
+    defineField({
+      name: 'contactText',
+      title: 'Contact Section Text',
+      type: 'text',
+      rows: 3,
+      group: 'contact',
+    }),
   ],
   groups: [
     { name: 'about', title: 'About Section' },
     { name: 'countdown', title: 'Countdown Section' },
     { name: 'presale', title: 'Pre-sale Section' },
     { name: 'gallery', title: 'Gallery Section' },
+    { name: 'contact', title: 'Contact Section' },
   ],
   preview: {
     prepare() {

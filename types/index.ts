@@ -31,6 +31,7 @@ export interface SiteSettings {
   bandName: string;
   logo?: SanityImage;
   tagline?: string;
+  contactEmail?: string;
   socialLinks?: {
     facebook?: string;
     instagram?: string;
@@ -116,28 +117,18 @@ export interface BandMember {
   order: number;
 }
 
-// Tour Date (object type, not document)
-export interface TourDate {
-  _key: string;
-  date: string;
-  venue: string;
-  city: string;
-  country?: string;
-  ticketUrl?: string;
-  vipUrl?: string;
-  isSoldOut?: boolean;
-}
-
-// Tour
+// Tour (single event)
 export interface Tour {
   _id: string;
   _type: 'tour';
-  name: string;
-  region: 'turkey' | 'europe' | 'america' | 'other';
-  promoImage?: SanityImage;
-  promoVideoUrl?: string;
-  dates?: TourDate[];
-  bookingUrl?: string;
+  venue: string;
+  city: string;
+  country?: string;
+  date: string;
+  time?: string;
+  ticketUrl?: string;
+  vipUrl?: string;
+  isSoldOut?: boolean;
   isActive?: boolean;
 }
 
@@ -182,4 +173,6 @@ export interface PageContent {
     dates: string;
   }>;
   instagramHandle?: string;
+  contactTitle?: string;
+  contactText?: string;
 }

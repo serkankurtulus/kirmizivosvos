@@ -27,8 +27,8 @@ export const albumBySlugQuery = `*[_type == "album" && slug.current == $slug][0]
 // Band Members (ordered)
 export const bandMembersQuery = `*[_type == "bandMember"] | order(order asc)`;
 
-// Active Tours
-export const toursQuery = `*[_type == "tour" && isActive == true]`;
+// Active Tours (sorted by date)
+export const toursQuery = `*[_type == "tour" && isActive == true] | order(date asc)`;
 
 // Gallery Images (ordered)
 export const galleryImagesQuery = `*[_type == "galleryImage"] | order(order asc)`;
@@ -52,7 +52,7 @@ export const homePageQuery = `{
   },
   "albums": *[_type == "album"] | order(order asc)[0...4],
   "bandMembers": *[_type == "bandMember"] | order(order asc),
-  "tours": *[_type == "tour" && isActive == true],
+  "tours": *[_type == "tour" && isActive == true] | order(date asc),
   "galleryImages": *[_type == "galleryImage"] | order(order asc)[0...9],
   "newsPosts": *[_type == "newsPost"] | order(date desc)[0...2],
   "pageContent": *[_type == "pageContent"][0]

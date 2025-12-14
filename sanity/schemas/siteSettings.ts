@@ -27,6 +27,12 @@ export default defineType({
       description: 'A short description or slogan',
     }),
     defineField({
+      name: 'contactEmail',
+      title: 'Main Contact Email',
+      type: 'string',
+      description: 'Primary contact email displayed on the website',
+    }),
+    defineField({
       name: 'socialLinks',
       title: 'Social Media Links',
       type: 'object',
