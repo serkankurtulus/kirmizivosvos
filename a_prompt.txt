@@ -1,0 +1,199 @@
+# CALIBRATION PROMPT - Kırmızı Vosvos Website Project
+
+Read this prompt when you need to recalibrate, refocus, or when context seems unclear.
+
+---
+
+## PROJECT IDENTITY
+
+**Project Name:** Kırmızı Vosvos Official Website
+**Client:** Kırmızı Vosvos (Turkish Music Group)
+**Location:** /Users/serkan/Documents/kvwebsite/
+**Plan Document:** implementationplan.md (ALWAYS UPDATE THIS)
+
+---
+
+## WHAT YOU ARE BUILDING
+
+A modern, CMS-powered music band website based on the MOUSIQUA HTML template.
+
+**Source Template:** `/Users/serkan/Documents/kvwebsite/MOUSIQUA /HTML/`
+**Key Constraint:** PRESERVE THE ORIGINAL DESIGN - do not redesign, do not "improve" the aesthetics.
+
+---
+
+## TECHNOLOGY STACK (LOCKED IN)
+
+| Layer | Technology | DO NOT CHANGE |
+|-------|------------|---------------|
+| Frontend | Next.js 14 (App Router) | Yes |
+| Language | TypeScript | Yes |
+| CMS | Sanity.io | Yes |
+| Styling | Original CSS files | Yes |
+| Deployment | Vercel | Yes |
+
+---
+
+## CORE EXPECTATIONS
+
+### 1. DESIGN PRESERVATION
+- Use the EXACT CSS from the template (bootstrap.css, base.css, main.css, fonts.css)
+- Keep the same color scheme (#13181d dark, #ff5252 red accent)
+- Maintain the same layout, spacing, and typography
+- Do NOT add Tailwind styling that conflicts with original design
+- Do NOT "modernize" or "improve" the visual design
+
+### 2. CMS FUNCTIONALITY
+The client must be able to edit ALL content through Sanity Studio:
+- Hero slides (images, text)
+- Albums and tracks (with audio upload)
+- Band member profiles
+- Tour dates and venues
+- Photo gallery
+- News/blog posts
+- Contact information
+- Social media links
+
+### 3. DOCUMENTATION
+- UPDATE implementationplan.md after EVERY significant change
+- Log all design choices with reasoning
+- Document all issues and their resolutions
+- Track progress in the Progress Log section
+- Mark tasks as completed when done
+
+### 4. CODE QUALITY
+- Use TypeScript strictly (no `any` types)
+- Create reusable components
+- Follow Next.js 14 App Router conventions
+- Keep components focused and single-purpose
+- Comment complex logic only
+
+---
+
+## CURRENT PHASE CHECK
+
+Before continuing work, verify:
+1. What phase am I in? (Check implementationplan.md)
+2. What tasks are pending in this phase?
+3. What was the last thing completed?
+4. Are there any unresolved issues?
+
+---
+
+## FILE STRUCTURE REMINDER
+
+```
+kirmizi-vosvos/
+├── app/                    # Next.js pages and layouts
+├── components/             # React components
+│   ├── layout/            # Header, Footer
+│   ├── sections/          # Page sections (Hero, About, etc.)
+│   └── ui/                # Reusable UI (AudioPlayer, etc.)
+├── lib/                   # Utilities and Sanity client
+├── sanity/                # Sanity schemas and config
+├── public/                # Static assets (fonts, images)
+├── styles/                # Original CSS files
+└── types/                 # TypeScript interfaces
+```
+
+---
+
+## COMMON DEVIATIONS TO AVOID
+
+### DON'T:
+- Start over or restructure without explicit user request
+- Add features not in the original template
+- Change the visual design
+- Use different libraries than specified
+- Skip updating implementationplan.md
+- Leave tasks half-finished
+- Forget to copy original CSS/fonts/images
+
+### DO:
+- Ask if unclear about requirements
+- Update documentation as you work
+- Test each component matches original design
+- Preserve all original CSS classes
+- Keep the same HTML structure in JSX
+- Commit logical chunks of work
+
+---
+
+## QUICK REFERENCE - ORIGINAL TEMPLATE SECTIONS
+
+| Section | HTML ID/Class | Must Include |
+|---------|---------------|--------------|
+| Hero | .hero, .main-slider | Image slider, text overlay |
+| Latest Album | #album | Audio player, track list |
+| About | #about | Background image, text, social |
+| Discography | #discography | Album grid (4 items) |
+| Countdown | .divider | Event countdown timer |
+| Band | #band | Member cards (3 items) |
+| Tours | #tour | Tabbed tour dates |
+| Gallery | #gallery | Masonry image grid |
+| News | #news | Blog post cards |
+| Contact | #contact | Contact cards, social icons |
+| Footer | .footer | Copyright, links |
+
+---
+
+## SANITY SCHEMA TYPES
+
+1. siteSettings - Global site configuration
+2. heroSlide - Hero carousel slides
+3. album - Music albums
+4. track - Individual songs
+5. bandMember - Band member profiles
+6. tour - Tour information
+7. tourDate - Individual tour dates (object)
+8. galleryImage - Photo gallery items
+9. newsPost - Blog/news articles
+10. pageContent - Misc page content
+
+---
+
+## RECOVERY CHECKLIST
+
+If you're lost or confused:
+
+1. [ ] Read implementationplan.md completely
+2. [ ] Check the Progress Log for last activity
+3. [ ] Review the Pending Items section
+4. [ ] Look at Issues & Resolutions for context
+5. [ ] Verify current file structure exists
+6. [ ] Check what phase should be active
+7. [ ] Ask user for clarification if needed
+
+---
+
+## USER COMMUNICATION STYLE
+
+- Be concise and direct
+- Show progress clearly
+- Update the plan document, then summarize changes
+- Ask focused questions when blocked
+- Don't over-explain or add unnecessary commentary
+
+---
+
+## SUCCESS CRITERIA
+
+The project is successful when:
+1. Website looks identical to MOUSIQUA template
+2. All content is editable via Sanity Studio
+3. Site is deployed and accessible on Vercel
+4. implementationplan.md is fully updated with all phases completed
+5. User can independently update content without code changes
+
+---
+
+## REMEMBER
+
+You are not creating a new design. You are converting an existing HTML template to a modern stack while preserving its exact appearance. The template is the source of truth for all visual decisions.
+
+When in doubt: MATCH THE TEMPLATE.
+
+---
+
+*Last Updated: 2025-12-15*
+*Use this prompt to recalibrate whenever context is lost or direction is unclear.*
