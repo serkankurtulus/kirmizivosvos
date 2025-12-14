@@ -31,7 +31,7 @@
 /* Clearfix for the .slides element */
 .slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;} 
 html[xmlns] .slides {display: block;} 
-* html .slides {height: 1%;}
+/* IE hack removed: * html .slides {height: 1%;} */
 
 /* No JavaScript Fallback */
 /* If you are not using another script, such as Modernizr, make sure you
@@ -50,7 +50,7 @@ html[xmlns] .slides {display: block;}
 
 
 /* Direction Nav */
-.flex-direction-nav {*height: 0;}
+.flex-direction-nav { /* IE hack removed */ }
 .flex-direction-nav a {
 	
 

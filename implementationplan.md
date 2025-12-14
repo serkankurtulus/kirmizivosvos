@@ -851,6 +851,7 @@ NEXT_PUBLIC_SITE_URL=https://your-domain.vercel.app
 | 2 | CSS warning: IE hack in flexslider.css | NOTED | Legacy `*height: 0;` hack, no action needed |
 | 3 | @sanity/vision not installed | RESOLVED | Ran `npm install @sanity/vision` |
 | 4 | jsdom version mismatch warning | NOTED | Non-breaking, Sanity internal dependency |
+| 5 | CSS parsing error: IE hacks in flexslider.css | RESOLVED | Removed `*height: 0;` and `* html .slides` IE7 hacks that modern CSS parsers reject |
 
 ---
 
